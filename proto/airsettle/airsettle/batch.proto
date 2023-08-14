@@ -1,0 +1,12 @@
+syntax = "proto3";
+package airsettle.airsettle;
+
+option go_package = "airsettle/x/airsettle/types";
+
+message Batch {
+  
+  uint64 batchNumber = 1; 
+  string merkleRootHash = 2; 
+  string prevMerkleRootHash = 3; 
+  string zkProof = 4; 
+}

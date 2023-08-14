@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package airsettle.airsettle;
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "airsettle/airsettle/params.proto";
+import "airsettle/airsettle/exelayer.proto";
+import "airsettle/airsettle/batch.proto";
+
+option go_package = "airsettle/x/airsettle/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  
+  // Parameters queries the parameters of the module.
+  rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/airsettle/airsettle/params";
+  
+  }
+  
+  // Queries a list of ShowExecutionLayer items.
+  rpc ShowExecutionLayer (QueryShowExecutionLayerRequest) returns (QueryShowExecutionLayerResponse) {
+    option (google.api.http).get = "/airsettle/airsettle/show_execution_layer/{id}";
+  
+  }
+  
+  // Queries a list of ListExecutionLayers items.
+  rpc ListExecutionLayers (QueryListExecutionLayersRequest) returns (QueryListExecutionLayersResponse) {
+    option (google.api.http).get = "/airsettle/airsettle/list_execution_layers";
+  
+  }
+  
+  // Queries a list of ShowBatch items.
+  rpc ShowBatch (QueryShowBatchRequest) returns (QueryShowBatchResponse) {
+    option (google.api.http).get = "/airsettle/airsettle/show_batch/{id}/{batchNumber}";
+  
+  }
+  
+  // Queries a list of ChainList items.
+  rpc ChainList (QueryChainListRequest) returns (QueryChainListResponse) {
+    option (google.api.http).get = "/airsettle/airsettle/chain_list/{creatorAddress}";
+  
+  }
+  
+  // Queries a list of ChainListDetailed items.
+  rpc ChainListDetailed (QueryChainListDetailedRequest) returns (QueryChainListDetailedResponse) {
+    option (google.api.http).get = "/airsettle/airsettle/chain_list_detailed/{creatorAddress}";
+  
+  }
+  
+  // Queries a list of VerificationKey items.
+  rpc VerificationKey (QueryVerificationKeyRequest) returns (QueryVerificationKeyResponse) {
+    option (google.api.http).get = "/airsettle/airsettle/verification_key/{id}";
+  
+  }
+  
+  // Queries a list of Verify items.
+  rpc Verify (QueryVerifyRequest) returns (QueryVerifyResponse) {
+    option (google.api.http).get = "/airsettle/airsettle/verify/{id}/{batchNumber}/{inputs}";
+  
+  }
+}
+// QueryParamsRequest is request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  
+  // params holds all the parameters of this module.
+  Params params = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryShowExecutionLayerRequest {
+  string id = 1;
+}
+
+message QueryShowExecutionLayerResponse {
+  Exelayer exelayer = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryListExecutionLayersRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryListExecutionLayersResponse {
+  repeated Exelayer                               exelayer   = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryShowBatchRequest {
+  string id          = 1;
+  uint64 batchNumber = 2;
+}
+
+message QueryShowBatchResponse {
+  Batch batch = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryChainListRequest {
+  string creatorAddress = 1;
+}
+
+message QueryChainListResponse {
+  repeated string exelayerChains = 1;
+}
+
+message QueryChainListDetailedRequest {
+  string                                creatorAddress = 1;
+  cosmos.base.query.v1beta1.PageRequest pagination     = 2;
+}
+
+message QueryChainListDetailedResponse {
+  repeated Exelayer                               exelayer   = 1;
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryVerificationKeyRequest {
+  string id = 1;
+}
+
+message QueryVerificationKeyResponse {
+  string vkey = 1;
+}
+
+message QueryVerifyRequest {
+  string id          = 1;
+  uint64 batchNumber = 2;
+  string inputs      = 3;
+}
+
+message QueryVerifyResponse {
+  bool   result  = 1;
+  string message = 2;
+}
+

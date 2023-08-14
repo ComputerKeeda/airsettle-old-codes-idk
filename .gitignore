@@ -1,0 +1,9 @@
+vue/node_modules
+vue/dist
+release/
+.idea/
+.vscode/
+.DS_Store
+temp
+go.work
+go.work.sum

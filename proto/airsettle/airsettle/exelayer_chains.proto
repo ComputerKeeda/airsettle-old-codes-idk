@@ -1,0 +1,10 @@
+syntax = "proto3";
+package airsettle.airsettle;
+
+option go_package = "airsettle/x/airsettle/types";
+
+message ExelayerChains {
+  
+  string creator = 1; 
+  repeated string id = 2; 
+}

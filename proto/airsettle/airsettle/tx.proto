@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package airsettle.airsettle;
+
+option go_package = "airsettle/x/airsettle/types";
+
+// Msg defines the Msg service.
+service Msg {
+  rpc AddExecutionLayer (MsgAddExecutionLayer) returns (MsgAddExecutionLayerResponse);
+  rpc AddBatch          (MsgAddBatch         ) returns (MsgAddBatchResponse         );
+}
+message MsgAddExecutionLayer {
+  string creator         = 1;
+  string verificationKey = 2;
+  string chainInfo       = 3;
+}
+
+message MsgAddExecutionLayerResponse {
+  string id = 1;
+}
+
+message MsgAddBatch {
+  string creator            = 1;
+  string id                 = 2;
+  uint64 batchNumber        = 3;
+  string merkleRootHash     = 4;
+  string prevMerkleRootHash = 5;
+  string zkProof            = 6;
+}
+
+message MsgAddBatchResponse {
+  bool batchStatus = 1;
+}
+
