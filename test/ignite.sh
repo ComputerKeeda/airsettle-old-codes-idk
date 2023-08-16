@@ -16,16 +16,31 @@ ignite scaffold query verification_key id --response vkey
 
 ignite scaffold query verify id batch_number:uint inputs --response result:bool,message
 
+# ! Doubt: "--response success:bool,message" OR "throw error from blockchain (better): no transaction." 
 # TODO: not run yet
-ignite scaffold message add_validator_request validator_address --response voting_poll_id
+ignite scaffold type poll poll_id chain_id new_validator votes_done_by:array.string votes:array.bool total_validators:uint votes_done:uint start_date
+# {
+#	 "poll_id" : "uuid_1232" , 
+#	 "chain_id" : "uuid_123" , 
+#	 "new_validator" : "airx2183...", // to be added
+#	 "votes_done_by": [ "air192938_address" , "air2", "air3" ],
+#	 "votes": [true,false,true],
+#	 "total_validatord":8,
+#	 "votes_done":3,
+#	 "start_date": "2018-12-12 12:12:12"
+# }
+ignite scaffold message add_validator_request new_validator_address chain_id --response voting_poll_id
+ignite scaffold query list_polls_ids --response polls_ids:array.string
+ignite scaffold query poll_details poll_id --response poll:Poll
+ignite scaffold message add_validator_vote poll_id vote:bool --response success:bool,message
+# ignite scaffold query list_polls chainid --response poll:Poll --paginated
 
-ignite scaffold query list_validators_request --response unvoted_active_voting_poll_ids:array.string
-ignite scaffold query list_validators_request --response unvoted_active_voting_poll_details:array.string
-ignite scaffold query list_validators_request --response active_voting_poll_ids:array.string
-ignite scaffold query list_validators_request --response active_voting_poll_details:array.string
+# TODO: Rollback
+ignite scaffold type rollbackpoll
+# only one rollback at a time. [approx all validators will target same batchnumber in case of wrong batch]
+ignite scaffold message req_rollback batchnumber:uint chainid --response success:bool,message
 
-ignite scaffold message add_validator_vote  validator_address
+ignite scaffold query get_rollback_status chainid --response rollbackpoll:Rollbackpoll # rollback in this batch
+# until this is resolve no neighter new batch, nor new rollback request can be submitted
 
-ignite scaffold query list_validators_request
-
-ignite scaffold message add_execution_layer verification_key chain_info --response id
+ignite sacffold message vote_rollback chainid batchnumber:uint vote:bool --response success:bool,message

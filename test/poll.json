@@ -1,0 +1,16 @@
+{
+	"poll_id" : "uuid_1232" , 
+	"chain_id" : "uuid_123" , 
+	"new_validator" : "airx2183...", // to be added
+
+	"votes_done_by": [ "air192938_address" , "air2", "air3" ],
+	"votes": [true,false,true],
+	"total_validatord":8,
+	"votes_done":3,
+
+	"start_date": "2018-12-12 12:12:12"
+}
+
+// "start_date", if 1 month is already passed, then delete the poll
+// "is_voting_done" : "true/false" : not needed becase if voting is done, it would be deleted...
+

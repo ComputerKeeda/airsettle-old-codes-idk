@@ -530,8 +530,6 @@ paths:
                 type: boolean
               message:
                 type: string
-              vkey:
-                type: string
         default:
           description: An unexpected error response.
           schema:
@@ -47230,8 +47228,6 @@ definitions:
       result:
         type: boolean
       message:
-        type: string
-      vkey:
         type: string
   cosmos.base.query.v1beta1.PageRequest:
     type: object
