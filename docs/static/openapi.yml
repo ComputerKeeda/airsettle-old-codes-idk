@@ -47045,6 +47045,11 @@ definitions:
     properties:
       id:
         type: string
+  airsettle.airsettle.MsgAddValidatorResponse:
+    type: object
+    properties:
+      votingPollId:
+        type: string
   airsettle.airsettle.Params:
     type: object
     description: Params defines the parameters for the module.

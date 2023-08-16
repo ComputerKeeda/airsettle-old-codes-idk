@@ -36,3 +36,27 @@ func LogCreateChainid(chainid string) {
 	defer logFile.Close()
 	_, _ = logFile.WriteString(chainid)
 }
+
+func LogLoop(s []string) {
+	// Specify the path to the log file.
+	logFilePath := "air.log"
+
+	// Open the log file in append mode.
+	logFile, err := os.OpenFile(logFilePath, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	if err != nil {
+		fmt.Println("Error opening log file:", err)
+		return
+	}
+	defer logFile.Close()
+
+	for i := 0; i < len(s); i++ {
+		// String to append to the log file.
+		logEntry := s[i] + "\n"
+
+		_, err = logFile.WriteString(logEntry)
+		if err != nil {
+			fmt.Println("Error writing to log file:", err)
+			return
+		}
+	}
+}

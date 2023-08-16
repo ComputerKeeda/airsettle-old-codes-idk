@@ -116,8 +116,7 @@ func stringToBigInts(inputJSON string) ([]*big.Int, error) {
 
 // ! Utility Functions are here --> End
 
-
-func (k Keeper) Verifier(ctx sdk.Context, zkproof string, vkey string, input string) (bool,string) {
+func (k Keeper) Verifier(ctx sdk.Context, zkproof string, vkey string, input string) (bool, string) {
 
 	_ = ctx
 
@@ -125,24 +124,24 @@ func (k Keeper) Verifier(ctx sdk.Context, zkproof string, vkey string, input str
 	var semiParsedVerficationKey VerificationKey
 	err := json.Unmarshal([]byte(vkey), &semiParsedVerficationKey)
 	if err != nil {
-		return false,"ERROR: semiParsedVerficationKey"
+		return false, "ERROR: semiParsedVerficationKey"
 	}
 	parsedVerficationKey := convertToVk(semiParsedVerficationKey)
-	
+
 	// formate proof
 	var semiParsedProof Proof
 	err2 := json.Unmarshal([]byte(zkproof), &semiParsedProof)
 	if err2 != nil {
-		return false,"Error: semiParsedProof"
+		return false, "Error: semiParsedProof"
 	}
 	parsedProof := convertToProof(semiParsedProof)
 
 	// formate input
 	parsedInputs, err := stringToBigInts(input)
 	if err != nil {
-		return false,"Error: parsedInputs"
+		return false, "Error: parsedInputs"
 	}
 
 	res := groth16.VerifyProof(parsedVerficationKey, parsedProof, parsedInputs, true)
-	return res,"verification successful"
+	return res, "verification successful"
 }

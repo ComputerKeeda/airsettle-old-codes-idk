@@ -10,6 +10,7 @@ const (
 	VerificationKey   = "Exelayer/vk/"
 	CounterStore      = "Exelayer/counter/"
 	ExelayerChainKey  = "ExelayerChain/value"
+	PollKeyPrefix     = "Poll/value/"
 )
 
 // ExecutionlayersKey returns the store key to retrieve a Executionlayers from the index fields

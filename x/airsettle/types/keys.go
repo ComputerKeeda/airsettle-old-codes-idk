@@ -12,6 +12,7 @@ const (
 
 	// MemStoreKey defines the in-memory store key
 	MemStoreKey = "mem_airsettle"
+
 )
 
 func KeyPrefix(p string) []byte {

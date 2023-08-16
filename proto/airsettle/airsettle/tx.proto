@@ -8,6 +8,7 @@ option go_package = "airsettle/x/airsettle/types";
 service Msg {
   rpc AddExecutionLayer (MsgAddExecutionLayer) returns (MsgAddExecutionLayerResponse);
   rpc AddBatch          (MsgAddBatch         ) returns (MsgAddBatchResponse         );
+  rpc AddValidator      (MsgAddValidator     ) returns (MsgAddValidatorResponse     );
 }
 message MsgAddExecutionLayer {
   string creator         = 1;
@@ -30,5 +31,15 @@ message MsgAddBatch {
 
 message MsgAddBatchResponse {
   bool batchStatus = 1;
+}
+
+message MsgAddValidator {
+  string creator             = 1;
+  string newValidatorAddress = 2;
+  string chainId             = 3;
+}
+
+message MsgAddValidatorResponse {
+  string votingPollId = 1;
 }
 

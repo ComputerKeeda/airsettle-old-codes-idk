@@ -42,11 +42,10 @@ func (k Keeper) Verify(goCtx context.Context, req *types.QueryVerifyRequest) (*t
 	Log("verify request received")
 
 	// verify
-	result,message := k.Verifier(ctx, str_zkproof, str_verificationKey, req.Inputs)
-	
+	result, message := k.Verifier(ctx, str_zkproof, str_verificationKey, req.Inputs)
 
 	return &types.QueryVerifyResponse{
-		Result: result, 
+		Result:  result,
 		Message: message,
 	}, nil
 }
