@@ -8,6 +8,7 @@ import "cosmos/base/query/v1beta1/pagination.proto";
 import "airsettle/airsettle/params.proto";
 import "airsettle/airsettle/exelayer.proto";
 import "airsettle/airsettle/batch.proto";
+import "airsettle/airsettle/poll.proto";
 
 option go_package = "airsettle/x/airsettle/types";
 
@@ -65,6 +66,12 @@ service Query {
   // Queries a list of ListAddValidatorsPolls items.
   rpc ListAddValidatorsPolls (QueryListAddValidatorsPollsRequest) returns (QueryListAddValidatorsPollsResponse) {
     option (google.api.http).get = "/airsettle/airsettle/list_add_validators_polls";
+  
+  }
+  
+  // Queries a list of ValidatorPollDetails items.
+  rpc ValidatorPollDetails (QueryValidatorPollDetailsRequest) returns (QueryValidatorPollDetailsResponse) {
+    option (google.api.http).get = "/airsettle/airsettle/validator_poll_details/{pollId}";
   
   }
 }
@@ -143,10 +150,17 @@ message QueryVerifyResponse {
 
 message QueryListAddValidatorsPollsRequest {
   cosmos.base.query.v1beta1.PageRequest pagination = 1;
-
 }
 
 message QueryListAddValidatorsPollsResponse {
   repeated string pollIds = 1;
+}
+
+message QueryValidatorPollDetailsRequest {
+  string pollId = 1;
+}
+
+message QueryValidatorPollDetailsResponse {
+  Poll poll = 1;
 }
 

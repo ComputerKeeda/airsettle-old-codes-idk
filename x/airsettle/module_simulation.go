@@ -35,6 +35,10 @@ const (
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgAddValidator int = 100
 
+	opWeightMsgSubmitValidatorVote = "op_weight_msg_submit_validator_vote"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgSubmitValidatorVote int = 100
+
 	// this line is used by starport scaffolding # simapp/module/const
 )
 
@@ -96,6 +100,17 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 		airsettlesimulation.SimulateMsgAddValidator(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
 
+	var weightMsgSubmitValidatorVote int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgSubmitValidatorVote, &weightMsgSubmitValidatorVote, nil,
+		func(_ *rand.Rand) {
+			weightMsgSubmitValidatorVote = defaultWeightMsgSubmitValidatorVote
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgSubmitValidatorVote,
+		airsettlesimulation.SimulateMsgSubmitValidatorVote(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
 	// this line is used by starport scaffolding # simapp/module/operation
 
 	return operations
@@ -125,6 +140,14 @@ func (am AppModule) ProposalMsgs(simState module.SimulationState) []simtypes.Wei
 			defaultWeightMsgAddValidator,
 			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
 				airsettlesimulation.SimulateMsgAddValidator(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgSubmitValidatorVote,
+			defaultWeightMsgSubmitValidatorVote,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				airsettlesimulation.SimulateMsgSubmitValidatorVote(am.accountKeeper, am.bankKeeper, am.keeper)
 				return nil
 			},
 		),

@@ -30,11 +30,10 @@ func Log(text string) {
 	fmt.Println("Log entry added successfully!")
 }
 
-func LogCreateChainid(chainid string) {
-	logFilePath := "test/chainid.test.air"
-	logFile, _ := os.OpenFile(logFilePath, os.O_WRONLY|os.O_TRUNC, 0644) //logFilePath, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+func LogCreateFileOnPath(data string, path string) {
+	logFile, _ := os.OpenFile(path, os.O_WRONLY|os.O_TRUNC, 0644) //logFilePath, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	defer logFile.Close()
-	_, _ = logFile.WriteString(chainid)
+	_, _ = logFile.WriteString(data)
 }
 
 func LogLoop(s []string) {

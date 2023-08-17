@@ -570,6 +570,67 @@ paths:
           type: string
       tags:
         - Query
+  /airsettle/airsettle/validator_poll_details/{pollId}:
+    get:
+      summary: Queries a list of ValidatorPollDetails items.
+      operationId: AirsettleAirsettleValidatorPollDetails
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              poll:
+                type: object
+                properties:
+                  pollId:
+                    type: string
+                  chainId:
+                    type: string
+                  newValidator:
+                    type: string
+                  votesDoneBy:
+                    type: array
+                    items:
+                      type: string
+                  votes:
+                    type: array
+                    items:
+                      type: string
+                  totalValidators:
+                    type: string
+                    format: uint64
+                  isComplete:
+                    type: boolean
+                  startDate:
+                    type: string
+                  pollCreator:
+                    type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pollId
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
   /airsettle/airsettle/verification_key/{id}:
     get:
       summary: Queries a list of VerificationKey items.
@@ -47141,9 +47202,46 @@ definitions:
     properties:
       votingPollId:
         type: string
+  airsettle.airsettle.MsgSubmitValidatorVoteResponse:
+    type: object
+    properties:
+      success:
+        type: boolean
+      pollResult:
+        type: string
+      message:
+        type: string
+      description:
+        type: string
   airsettle.airsettle.Params:
     type: object
     description: Params defines the parameters for the module.
+  airsettle.airsettle.Poll:
+    type: object
+    properties:
+      pollId:
+        type: string
+      chainId:
+        type: string
+      newValidator:
+        type: string
+      votesDoneBy:
+        type: array
+        items:
+          type: string
+      votes:
+        type: array
+        items:
+          type: string
+      totalValidators:
+        type: string
+        format: uint64
+      isComplete:
+        type: boolean
+      startDate:
+        type: string
+      pollCreator:
+        type: string
   airsettle.airsettle.QueryChainListDetailedResponse:
     type: object
     properties:
@@ -47319,6 +47417,35 @@ definitions:
           id:
             type: string
           creator:
+            type: string
+  airsettle.airsettle.QueryValidatorPollDetailsResponse:
+    type: object
+    properties:
+      poll:
+        type: object
+        properties:
+          pollId:
+            type: string
+          chainId:
+            type: string
+          newValidator:
+            type: string
+          votesDoneBy:
+            type: array
+            items:
+              type: string
+          votes:
+            type: array
+            items:
+              type: string
+          totalValidators:
+            type: string
+            format: uint64
+          isComplete:
+            type: boolean
+          startDate:
+            type: string
+          pollCreator:
             type: string
   airsettle.airsettle.QueryVerificationKeyResponse:
     type: object

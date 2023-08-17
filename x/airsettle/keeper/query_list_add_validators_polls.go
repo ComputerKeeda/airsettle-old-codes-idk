@@ -31,6 +31,5 @@ func (k Keeper) ListAddValidatorsPolls(goCtx context.Context, req *types.QueryLi
 	if err != nil {
 		return nil, status.Error(codes.Internal, err.Error())
 	}
-
 	return &types.QueryListAddValidatorsPollsResponse{PollIds: pollIds}, nil
 }

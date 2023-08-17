@@ -1,3 +1,6 @@
-Execution layer created. chainId: 9e89be28-8405-4077-b5c2-313fd074a08a
-UUID created
-82c2accb-8f94-4695-b0c8-eb62f4448740
+AddValidator Called with ChainId: 021d275d-8024-4ade-bccd-9ff374905bc2 and NewValidatorAddress: air1p3qmpeddacn8znrhlvhrkjv0xts6d9u662qlpj
+PollId: 305f9342-76ed-4250-ab7b-f7667a9f6cf4 NewValidatorAddress: air1p3qmpeddacn8znrhlvhrkjv0xts6d9u662qlpj ChainId: 871f3b7a-c54a-42d0-9bee-751d4c942d74
+PollId: 3d5b0e59-b50d-4db1-ba9c-b9ac6895d60a NewValidatorAddress: air1p3qmpeddacn8znrhlvhrkjv0xts6d9u662qlpj ChainId: cbb3b767-193f-4b02-977d-f1b03a00ab73
+PollId: 86e12d3b-fdee-45d0-8a71-0b31bb2adfa0 NewValidatorAddress: air1p3qmpeddacn8znrhlvhrkjv0xts6d9u662qlpj ChainId: 597d293a-3284-4fda-913d-5c17b6c25100
+PollId: 94d5ee89-9bf9-4227-ab01-83a6e0ad3075 NewValidatorAddress: air1p3qmpeddacn8znrhlvhrkjv0xts6d9u662qlpj ChainId: 021d275d-8024-4ade-bccd-9ff374905bc2
+NewValidatorAddress is already in the list at PollId: 94d5ee89-9bf9-4227-ab01-83a6e0ad3075

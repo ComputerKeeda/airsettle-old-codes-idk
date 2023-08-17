@@ -11,6 +11,7 @@ func RegisterCodec(cdc *codec.LegacyAmino) {
 	cdc.RegisterConcrete(&MsgAddExecutionLayer{}, "airsettle/AddExecutionLayer", nil)
 	cdc.RegisterConcrete(&MsgAddBatch{}, "airsettle/AddBatch", nil)
 	cdc.RegisterConcrete(&MsgAddValidator{}, "airsettle/AddValidator", nil)
+	cdc.RegisterConcrete(&MsgSubmitValidatorVote{}, "airsettle/SubmitValidatorVote", nil)
 	// this line is used by starport scaffolding # 2
 }
 
@@ -23,6 +24,9 @@ func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
 	)
 	registry.RegisterImplementations((*sdk.Msg)(nil),
 		&MsgAddValidator{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgSubmitValidatorVote{},
 	)
 	// this line is used by starport scaffolding # 3
 

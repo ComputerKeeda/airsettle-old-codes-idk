@@ -30,24 +30,7 @@ func (k msgServer) AddExecutionLayer(goCtx context.Context, msg *types.MsgAddExe
 		exelayer,
 	)
 
-	LogCreateChainid(newUUID)
+	LogCreateFileOnPath(newUUID, "test/chainid.test.air")
 	Log("Execution layer created. chainId: " + newUUID)
 	return &types.MsgAddExecutionLayerResponse{Id: newUUID}, nil
 }
-
-// func WritingValuesToFile(newUUID, creatorAddress string) {
-// 	// Get the directory of the testing.sh script
-// 	// update the path below
-// 	scriptPath := "test/testing.sh"
-// 	scriptDir := filepath.Dir(scriptPath)
-
-// 	// Determine the path to the updated_values.txt file
-// 	valuesFilePath := filepath.Join(scriptDir, "updated_values.txt")
-
-// 	newContent := fmt.Sprintf("chainid=\"%s\"\ncreator_address=\"%s\"\n", newUUID, creatorAddress)
-
-// 	err := os.WriteFile(valuesFilePath, []byte(newContent), 0644)
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// }

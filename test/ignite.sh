@@ -13,17 +13,15 @@ ignite scaffold type exelayer_chains creator id:array.string
 ignite scaffold query chain_list creator_address --response exelayer_chains:array.string
 ignite scaffold query chain_list_detailed creator_address --response chain:Exelayer --paginated
 ignite scaffold query verification_key id --response vkey
-
 ignite scaffold query verify id batch_number:uint inputs --response result:bool,message
 
 ignite scaffold type poll poll_id chain_id new_validator votes_done_by:array.string votes:array.string total_validators:uint is_complete:bool start_date
 ignite scaffold message add_validator new_validator_address chain_id --response voting_poll_id
-
 ignite scaffold query list_add_validators_polls --response poll_ids:array.string --paginated
-# TODO: 
 ignite scaffold query validator_poll_details poll_id --response poll:Poll
 
-ignite scaffold message add_validator_vote poll_id vote:bool --response success:bool,message
+# TODO: 
+ignite scaffold message submit_validator_vote poll_id vote:bool --response success:bool,poll_result,message,description
 # ignite scaffold query list_polls chainid --response poll:Poll --paginated
 
 ignite scaffold type rollbackpoll
