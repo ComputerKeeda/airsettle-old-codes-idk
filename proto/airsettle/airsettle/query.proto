@@ -61,6 +61,12 @@ service Query {
     option (google.api.http).get = "/airsettle/airsettle/verify/{id}/{batchNumber}/{inputs}";
   
   }
+  
+  // Queries a list of ListAddValidatorsPolls items.
+  rpc ListAddValidatorsPolls (QueryListAddValidatorsPollsRequest) returns (QueryListAddValidatorsPollsResponse) {
+    option (google.api.http).get = "/airsettle/airsettle/list_add_validators_polls";
+  
+  }
 }
 // QueryParamsRequest is request type for the Query/Params RPC method.
 message QueryParamsRequest {}
@@ -133,5 +139,14 @@ message QueryVerifyRequest {
 message QueryVerifyResponse {
   bool   result  = 1;
   string message = 2;
+}
+
+message QueryListAddValidatorsPollsRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+
+}
+
+message QueryListAddValidatorsPollsResponse {
+  repeated string pollIds = 1;
 }
 

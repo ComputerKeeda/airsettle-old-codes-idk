@@ -24,6 +24,7 @@ func (k Keeper) ListExecutionLayers(goCtx context.Context, req *types.QueryListE
 	exelayerStore := prefix.NewStore(store, types.KeyPrefix(types.ExelayerKeyPrefix))
 
 	pageRes, err := query.Paginate(exelayerStore, req.Pagination, func(key []byte, value []byte) error {
+		_ = key
 		var exelayer types.Exelayer
 		if err := k.cdc.Unmarshal(value, &exelayer); err != nil {
 			return err

@@ -62,7 +62,7 @@ func (k msgServer) AddValidator(goCtx context.Context, msg *types.MsgAddValidato
 	pollStore.Set([]byte(newUUID), b)
 
 	LogLoop([]string{"UUID created", newUUID})
-	
+
 	return &types.MsgAddValidatorResponse{
 		VotingPollId: newUUID,
 	}, nil
