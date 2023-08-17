@@ -25,11 +25,15 @@ func (k Keeper) ListAddValidatorsPolls(goCtx context.Context, req *types.QueryLi
 		if err := k.cdc.Unmarshal(value, &poll); err != nil {
 			return err
 		}
-		pollIds = append(pollIds, poll.PollId) // Fixing the field name from pollId to PollId
+		if !poll.IsComplete  {
+			pollIds = append(pollIds, poll.PollId) // Fixing the field name from pollId to PollId
+		}
 		return nil
 	})
 	if err != nil {
 		return nil, status.Error(codes.Internal, err.Error())
 	}
+	
+	
 	return &types.QueryListAddValidatorsPollsResponse{PollIds: pollIds}, nil
 }

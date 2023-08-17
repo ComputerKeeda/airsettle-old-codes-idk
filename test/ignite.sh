@@ -19,9 +19,9 @@ ignite scaffold type poll poll_id chain_id new_validator votes_done_by:array.str
 ignite scaffold message add_validator new_validator_address chain_id --response voting_poll_id
 ignite scaffold query list_add_validators_polls --response poll_ids:array.string --paginated
 ignite scaffold query validator_poll_details poll_id --response poll:Poll
-
-# TODO: 
+# ? Testing
 ignite scaffold message submit_validator_vote poll_id vote:bool --response success:bool,poll_result,message,description
+# TODO: 
 # ignite scaffold query list_polls chainid --response poll:Poll --paginated
 
 ignite scaffold type rollbackpoll

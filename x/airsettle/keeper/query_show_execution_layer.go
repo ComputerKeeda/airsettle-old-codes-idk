@@ -34,6 +34,6 @@ func (k Keeper) ShowExecutionLayer(goCtx context.Context, req *types.QueryShowEx
 		Id:                   exelayer.Id,
 		Creator:              exelayer.Creator,
 	}
-
+	LogLoop(exelayer_data.Validator)
 	return &types.QueryShowExecutionLayerResponse{Exelayer: exelayer_data}, nil
 }

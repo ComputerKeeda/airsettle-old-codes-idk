@@ -95,6 +95,18 @@ func (k msgServer) AddValidator(goCtx context.Context, msg *types.MsgAddValidato
 		}
 	}
 
+	var computedIsComplete bool
+
+	if validatorsLength < 2 {
+		computedIsComplete = true
+		// add validator to the list
+		exeLayerDetails.Validator = append(exeLayerDetails.Validator, msg.NewValidatorAddress)
+		exeLayerDetails.VotingPower = append(exeLayerDetails.VotingPower, 100)
+		k.UpdateExecutionlayers(ctx, exeLayerDetails)
+	} else {
+		computedIsComplete = false
+	}
+
 	var poll = types.Poll{
 		PollId:          newUUID,
 		ChainId:         msg.ChainId,
@@ -102,10 +114,12 @@ func (k msgServer) AddValidator(goCtx context.Context, msg *types.MsgAddValidato
 		VotesDoneBy:     []string{msg.Creator},
 		Votes:           []string{"true"},
 		TotalValidators: uint64(validatorsLength),
-		IsComplete:      false,
+		IsComplete:      computedIsComplete,
 		StartDate:       ctx.BlockTime().String(),
 		PollCreator:     msg.Creator,
 	}
+
+
 
 	b := k.cdc.MustMarshal(&poll)
 	pollStore.Set([]byte(newUUID), b)
