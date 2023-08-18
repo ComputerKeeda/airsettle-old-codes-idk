@@ -25,7 +25,7 @@ func (k msgServer) AddExecutionLayer(goCtx context.Context, msg *types.MsgAddExe
 		Creator:              msg.Creator,
 	}
 
-	k.SetExecutionlayers(
+	k.SetExecutionLayers(
 		ctx,
 		exelayer,
 	)

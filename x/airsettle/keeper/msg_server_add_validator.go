@@ -19,7 +19,6 @@ func isValidCosmosAddress(address string) bool {
 	if !strings.HasPrefix(address, customPrefix) {
 		return false
 	}
-
 	// Decode the Bech32 encoded address
 	_, _, err := bech32.Decode(address, bech32.MaxLengthBIP173)
 
@@ -102,7 +101,7 @@ func (k msgServer) AddValidator(goCtx context.Context, msg *types.MsgAddValidato
 		// add validator to the list
 		exeLayerDetails.Validator = append(exeLayerDetails.Validator, msg.NewValidatorAddress)
 		exeLayerDetails.VotingPower = append(exeLayerDetails.VotingPower, 100)
-		k.UpdateExecutionlayers(ctx, exeLayerDetails)
+		k.UpdateExecutionLayers(ctx, exeLayerDetails)
 	} else {
 		computedIsComplete = false
 	}

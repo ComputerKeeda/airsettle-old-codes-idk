@@ -7,7 +7,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
-func (k Keeper) SetExecutionlayers(ctx sdk.Context, exelayer types.Exelayer) {
+func (k Keeper) SetExecutionLayers(ctx sdk.Context, exelayer types.Exelayer) {
 
 	// store verification key seperately. save memory on processing.
 	vk_store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.VerificationKey))
@@ -19,7 +19,7 @@ func (k Keeper) SetExecutionlayers(ctx sdk.Context, exelayer types.Exelayer) {
 	vk_store.Set([]byte(exelayer.Id), vk_binary)
 
 	// store other details. except vKey
-	exelayer.VerificationKey = "check this out" //"/getvkey/" + exelayer.Id + "/"
+	exelayer.VerificationKey =  "/getvkey/" + exelayer.Id + "/"
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.ExelayerKeyPrefix))
 	b := k.cdc.MustMarshal(&exelayer)
 	store.Set([]byte(exelayer.Id), b)
@@ -41,7 +41,7 @@ func (k Keeper) SetExecutionlayers(ctx sdk.Context, exelayer types.Exelayer) {
 	}
 }
 
-func (k Keeper) UpdateExecutionlayers(ctx sdk.Context, exelayer types.Exelayer) {
+func (k Keeper) UpdateExecutionLayers(ctx sdk.Context, exelayer types.Exelayer) {
 
 	// store other details. except vKey
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.ExelayerKeyPrefix))

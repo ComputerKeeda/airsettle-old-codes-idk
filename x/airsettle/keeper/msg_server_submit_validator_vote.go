@@ -114,7 +114,7 @@ func (k msgServer) SubmitValidatorVote(goCtx context.Context, msg *types.MsgSubm
 			newValidators = append(newValidators, pollDetails.NewValidator)
 			newVotingPower = append(newVotingPower, 100)
 
-			k.UpdateExecutionlayers(ctx, types.Exelayer{
+			k.UpdateExecutionLayers(ctx, types.Exelayer{
 				Validator:            newValidators,
 				VotingPower:          newVotingPower,
 				LatestBatch:          exeLayerDetails.LatestBatch,

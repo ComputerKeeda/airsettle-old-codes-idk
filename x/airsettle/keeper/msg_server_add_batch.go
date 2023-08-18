@@ -69,7 +69,7 @@ func (k msgServer) AddBatch(goCtx context.Context, msg *types.MsgAddBatch) (*typ
 	exelayer.LatestBatch = msg.BatchNumber
 	exelayer.LatestMerkleRootHash = msg.MerkleRootHash
 	exelayer.VerificationKey = "/getvkey/" + exelayer.Id + "/" // not changed
-	k.UpdateExecutionlayers(ctx, exelayer)
+	k.UpdateExecutionLayers(ctx, exelayer)
 
 	Log("Batch " + strconv.Itoa(int(msg.BatchNumber)) + " Created")
 	return &types.MsgAddBatchResponse{
