@@ -1,52 +1,57 @@
-# airsettle
-**airsettle** is a blockchain built using Cosmos SDK and Tendermint and created with [Ignite CLI](https://ignite.com/cli).
+# Modular Rollup Blockchain `Settlement Layer`
 
-## Get started
+Welcome to the repository for the settlement layer of our modular rollup blockchain! This settlement layer is a crucial component that ensures the secure and efficient transfer of assets between users on the blockchain. This README provides an overview of the project, its features, and instructions for setting up and contributing.
 
+## Table of Contents
+
+- [Modular Rollup Blockchain `Settlement Layer`](#modular-rollup-blockchain-settlement-layer)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Functionalities](#functionalities)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Code Review](#code-review)
+
+## Overview
+
+Our modular rollup blockchain settlement layer is designed to provide a high-performance solution for asset transfers within the blockchain ecosystem. It leverages cutting-edge technologies to achieve fast transaction confirmation while maintaining the security guarantees of the underlying blockchain.
+
+## Functionalities
+
+- **Add Settlement Layer**: Create and incorporate a new asset transfer layer.
+- **Get Settlement Layer (id list)**: Retrieve IDs of available settlement layers.
+- **Get Settlement Layer's Details (by id)**: Access details of a specific settlement layer.
+- **Add Validator (Request)**: Initiate validator joining process.
+- **Add Validator (Voting)**: Include validator approval data.
+- **Add Batch**: Create a batch of transactions for processing.
+- **Get Batch**: Fetch details about a transaction batch.
+- **Verify Batch**: Confirm accuracy of processed batch.
+
+## Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the following prerequisites:
+
+- [Go](https://golang.org/doc/install)
+
+### Installation
+
+1. Clone this repository to your local machine:
+
+```bash
+git clone https://github.com/saatvik333/air-settlement-airchains
 ```
-ignite chain serve
-```
 
-`serve` command installs dependencies, builds, initializes, and starts your blockchain in development.
 
-### Configure
+## Code Review
 
-Your blockchain in development can be configured with `config.yml`. To learn more, see the [Ignite CLI docs](https://docs.ignite.com).
-
-### Web Frontend
-
-Ignite CLI has scaffolded a Vue.js-based web app in the `vue` directory. Run the following commands to install dependencies and start the app:
-
-```
-cd vue
-npm install
-npm run serve
-```
-
-The frontend app is built using the `@starport/vue` and `@starport/vuex` packages. For details, see the [monorepo for Ignite front-end development](https://github.com/ignite/web).
-
-## Release
-To release a new version of your blockchain, create and push a new tag with `v` prefix. A new draft release with the configured targets will be created.
-
-```
-git tag v0.1
-git push origin v0.1
-```
-
-After a draft release is created, make your final changes from the release page and publish it.
-
-### Install
-To install the latest version of your blockchain node's binary, execute the following command on your machine:
-
-```
-curl https://get.ignite.com/username/airsettle@latest! | sudo bash
-```
-`username/airsettle` should match the `username` and `repo_name` of the Github repository to which the source code was pushed. Learn more about [the install process](https://github.com/allinbits/starport-installer).
-
-## Learn more
-
-- [Ignite CLI](https://ignite.com/cli)
-- [Tutorials](https://docs.ignite.com/guide)
-- [Ignite CLI docs](https://docs.ignite.com)
-- [Cosmos SDK docs](https://docs.cosmos.network)
-- [Developer Chat](https://discord.gg/ignite)
+- [ ]  **Add Settlement Layer**
+- [ ]  **Get Settlement Layer (id list)**
+- [ ]  **Get Settlement Layer's Details (by id)**
+- [ ]  **Add Validator (Request)**
+- [ ]  **Add Validator (Voting)**
+- [ ]  **Add Batch**
+- [ ]  **Get Batch**
+- [ ]  **Verify Batch**
