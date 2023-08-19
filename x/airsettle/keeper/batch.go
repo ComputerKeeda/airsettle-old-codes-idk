@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"airsettle/x/airsettle/types"
+	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
 	"encoding/binary"
 
 	"github.com/cosmos/cosmos-sdk/store/prefix"

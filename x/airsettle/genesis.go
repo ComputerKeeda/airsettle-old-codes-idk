@@ -1,8 +1,8 @@
 package airsettle
 
 import (
-	"airsettle/x/airsettle/keeper"
-	"airsettle/x/airsettle/types"
+	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/keeper"
+	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

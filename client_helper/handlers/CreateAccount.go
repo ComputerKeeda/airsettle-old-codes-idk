@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	utils "airsettle/client_helper/utils"
+	utils "github.com/Airchains-Studio/Settlement_Layer/client_helper/utils"
 
 	cosmosAccount "github.com/ignite/cli/ignite/pkg/cosmosaccount"
 )

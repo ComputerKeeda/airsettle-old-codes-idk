@@ -18,7 +18,7 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/stretchr/testify/require"
 
-	"airsettle/app"
+	"github.com/Airchains-Studio/Settlement_Layer/app"
 )
 
 type (

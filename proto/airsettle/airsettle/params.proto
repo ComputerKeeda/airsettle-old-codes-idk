@@ -3,7 +3,7 @@ package airsettle.airsettle;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "airsettle/x/airsettle/types";
+option go_package = "github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types";
 
 // Params defines the parameters for the module.
 message Params {

@@ -3,7 +3,7 @@ package keeper
 import (
 	"context"
 
-	"airsettle/x/airsettle/types"
+	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"google.golang.org/grpc/codes"

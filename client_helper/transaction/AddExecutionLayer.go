@@ -1,12 +1,13 @@
 package transaction
 
 import (
-	"airsettle/x/airsettle/types"
 	"context"
 	"fmt"
 	"log"
 	"os"
 	"strings"
+
+	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
 
 	"github.com/cosmos/btcutil/bech32"
 	cosmosClient "github.com/ignite/cli/ignite/pkg/cosmosclient"

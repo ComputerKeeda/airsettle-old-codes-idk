@@ -110,13 +110,13 @@ import (
 	ibctm "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint"
 	"github.com/spf13/cast"
 
-	airsettlemodule "airsettle/x/airsettle"
-	airsettlemodulekeeper "airsettle/x/airsettle/keeper"
-	airsettlemoduletypes "airsettle/x/airsettle/types"
+	airsettlemodule "github.com/Airchains-Studio/Settlement_Layer/x/airsettle"
+	airsettlemodulekeeper "github.com/Airchains-Studio/Settlement_Layer/x/airsettle/keeper"
+	airsettlemoduletypes "github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 
-	appparams "airsettle/app/params"
-	"airsettle/docs"
+	appparams "github.com/Airchains-Studio/Settlement_Layer/app/params"
+	"github.com/Airchains-Studio/Settlement_Layer/docs"
 )
 
 const (

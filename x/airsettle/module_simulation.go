@@ -3,9 +3,9 @@ package airsettle
 import (
 	"math/rand"
 
-	"airsettle/testutil/sample"
-	airsettlesimulation "airsettle/x/airsettle/simulation"
-	"airsettle/x/airsettle/types"
+	"github.com/Airchains-Studio/Settlement_Layer/testutil/sample"
+	airsettlesimulation "github.com/Airchains-Studio/Settlement_Layer/x/airsettle/simulation"
+	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"

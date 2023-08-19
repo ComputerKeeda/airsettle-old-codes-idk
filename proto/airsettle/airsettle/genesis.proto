@@ -4,7 +4,7 @@ package airsettle.airsettle;
 import "gogoproto/gogo.proto";
 import "airsettle/airsettle/params.proto";
 
-option go_package = "airsettle/x/airsettle/types";
+option go_package = "github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types";
 
 // GenesisState defines the airsettle module's genesis state.
 message GenesisState {
