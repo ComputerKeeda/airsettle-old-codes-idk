@@ -7,4 +7,4 @@ release/
 temp
 go.work
 go.work.sum
-client-helper/main.go
+storage_account
