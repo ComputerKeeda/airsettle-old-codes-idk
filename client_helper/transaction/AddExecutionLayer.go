@@ -10,10 +10,11 @@ import (
 	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
 
 	"github.com/cosmos/btcutil/bech32"
+	cosmosAccount "github.com/ignite/cli/ignite/pkg/cosmosaccount"
 	cosmosClient "github.com/ignite/cli/ignite/pkg/cosmosclient"
 )
 
-func AddExecutionLayer(accountAddress string) {
+func AddExecutionLayer(name string, path string) {
 
 	// MsgAddExecutionLayer require  more gas fee
 	gasLimit := "2000000"
@@ -28,27 +29,42 @@ func AddExecutionLayer(accountAddress string) {
 		log.Fatal(err)
 	}
 
-	if !isValidCosmosAddress(accountAddress) {
-		fmt.Println("Invalid NewValidatorAddress")
-		return
+	// if !isValidCosmosAddress(accountAddress) {
+	// 	fmt.Println("Invalid NewValidatorAddress")
+	// 	return
+	// }
+
+	registry, err := cosmosAccount.New(cosmosAccount.WithHome(path))
+	if err != nil {
+		panic(err)
+	}
+
+	account, err := registry.GetByName(name)
+	if err != nil {
+		panic(err)
+	}
+
+	addr, err := account.Address(addressPrefix)
+	if err != nil {
+		log.Fatal(err)
 	}
 
 	// Account `alice` was initialized during `ignite chain serve`
 	// accountName := "Isabella"
 
-	// Get account from the keyring
-	account, err := client.Account(accountAddress)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(account)
-	os.Exit(0)
+	// // Get account from the keyring
+	// account, err := client.Account(accountAddress)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// fmt.Println(account)
+	// os.Exit(0)
 
-	addr, err := account.Address(addressPrefix)
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
+	// addr, err := account.Address(addressPrefix)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// 	return
+	// }
 
 	// data, err := os.ReadFile("json/verification_key.json")
 	data, err := os.ReadFile("./sample_json_data/verification_key.json")

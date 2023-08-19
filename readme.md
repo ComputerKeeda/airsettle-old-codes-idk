@@ -11,7 +11,6 @@ Welcome to the repository for the settlement layer of our modular rollup blockch
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
-  - [Code Review](#code-review)
 
 ## Overview
 
@@ -43,15 +42,3 @@ Before you begin, ensure you have the following prerequisites:
 ```bash
 git clone https://github.com/Airchains-Studio/Settlement_Layer
 ```
-
-
-## Code Review
-
-- [ ]  **Add Settlement Layer**
-- [ ]  **Get Settlement Layer (id list)**
-- [ ]  **Get Settlement Layer's Details (by id)**
-- [ ]  **Add Validator (Request)**
-- [ ]  **Add Validator (Voting)**
-- [ ]  **Add Batch**
-- [ ]  **Get Batch**
-- [ ]  **Verify Batch**

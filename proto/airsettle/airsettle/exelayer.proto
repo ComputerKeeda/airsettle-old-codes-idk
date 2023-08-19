@@ -11,6 +11,5 @@ message Exelayer {
   string latestMerkleRootHash = 4; 
   string verificationKey = 5; 
   string chainInfo = 6; 
-  string id = 7; 
-  string creator = 8; 
+  string creator = 8;
 }

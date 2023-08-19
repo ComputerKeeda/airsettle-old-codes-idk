@@ -38,6 +38,9 @@ Example:
 	}
 */
 func CreateAccount(path string, accountName string) (response utils.Response) {
+
+	
+
 	registry, err := cosmosAccount.New(cosmosAccount.WithHome(path))
 
 	if err != nil {
