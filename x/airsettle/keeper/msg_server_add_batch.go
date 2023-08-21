@@ -1,19 +1,19 @@
 /*
-	! update: sequencer address who submit batch previously can't submit batch again in this batch number. 
+	! update: sequencer address who submit batch previously can't submit batch again in this batch number.
 	          and this seqnencer should call verify function before submitting batch [l2 don't need to check this one]
 	[ its in case for +1 validators only]
-    
+
 	? for more security: previous 2 sequencer address can't submit batch again in this batch number.
 */
-
 
 package keeper
 
 import (
-	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
 	"context"
 	"encoding/binary"
 	"strconv"
+
+	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
 
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"

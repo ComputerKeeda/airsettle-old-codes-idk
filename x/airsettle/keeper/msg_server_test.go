@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	keepertest "github.com/Airchains-Studio/Settlement_Layer/testutil/keeper"
-	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/keeper"
-	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
+	keepertest "github.com/airchains-network/Airchains-settlement-layer/testutil/keeper"
+	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/keeper"
+	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 )

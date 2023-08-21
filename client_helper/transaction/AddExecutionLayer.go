@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
+	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
 
 	"github.com/cosmos/btcutil/bech32"
 	cosmosAccount "github.com/ignite/cli/ignite/pkg/cosmosaccount"

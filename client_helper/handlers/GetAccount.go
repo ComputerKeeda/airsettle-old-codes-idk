@@ -4,10 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	utils "github.com/Airchains-Studio/Settlement_Layer/client_helper/utils"
+	utils "github.com/airchains-network/Airchains-settlement-layer/client_helper/utils"
 	cosmosAccount "github.com/ignite/cli/ignite/pkg/cosmosaccount"
 )
-
 
 /*
 GetAccount retrieves an existing account using the provided path and account name from the Cosmos Account registry.
@@ -25,7 +24,7 @@ Example:
 	package main
 
 	import (
-		handlers "github.com/Airchains-Studio/Settlement_Layer_Calls/handlers"
+		handlers "github.com/airchains-network/Airchains-settlement-layer_Calls/handlers"
 	)
 
 	func main() {
@@ -54,7 +53,6 @@ func GetAccount(path string, accountName string) (response utils.AccountResponse
 	if err != nil {
 		panic(err)
 	}
-
 
 	addr, err := account.Address(addressPrefix)
 	if err != nil {

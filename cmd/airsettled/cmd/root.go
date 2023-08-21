@@ -36,10 +36,11 @@ import (
 	"github.com/spf13/cast"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
+
 	// this line is used by starport scaffolding # root/moduleImport
 
-	"github.com/Airchains-Studio/Settlement_Layer/app"
-	appparams "github.com/Airchains-Studio/Settlement_Layer/app/params"
+	"github.com/airchains-network/Airchains-settlement-layer/app"
+	appparams "github.com/airchains-network/Airchains-settlement-layer/app/params"
 )
 
 // NewRootCmd creates a new root command for a Cosmos SDK application

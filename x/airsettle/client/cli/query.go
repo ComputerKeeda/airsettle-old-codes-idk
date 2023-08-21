@@ -10,7 +10,7 @@ import (
 	// "github.com/cosmos/cosmos-sdk/client/flags"
 	// sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
+	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
 )
 
 // GetQueryCmd returns the cli query commands for this module

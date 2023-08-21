@@ -3,7 +3,7 @@ package keeper
 import (
 	"context"
 
-	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
+	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
 	// verifier "airsettle/x/airsettle/verifier"
 
 	// "github.com/cosmos/cosmos-sdk/store/prefix"

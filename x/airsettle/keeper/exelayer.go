@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
+	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
 
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -19,7 +19,7 @@ func (k Keeper) SetExecutionLayers(ctx sdk.Context, exelayer types.Exelayer) {
 	vk_store.Set([]byte(exelayer.Id), vk_binary)
 
 	// store other details. except vKey
-	exelayer.VerificationKey =  "/getvkey/" + exelayer.Id + "/"
+	exelayer.VerificationKey = "/getvkey/" + exelayer.Id + "/"
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.ExelayerKeyPrefix))
 	b := k.cdc.MustMarshal(&exelayer)
 	store.Set([]byte(exelayer.Id), b)

@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	utils "github.com/Airchains-Studio/Settlement_Layer/client_helper/utils"
+	utils "github.com/airchains-network/Airchains-settlement-layer/client_helper/utils"
 
 	cosmosAccount "github.com/ignite/cli/ignite/pkg/cosmosaccount"
 )
@@ -23,7 +23,7 @@ Example:
 	package main
 
 	import (
-		handlers "github.com/Airchains-Studio/Settlement_Layer_Calls/handlers"
+		handlers "github.com/airchains-network/Airchains-settlement-layer_Calls/handlers"
 	)
 
 	func main() {
@@ -38,8 +38,6 @@ Example:
 	}
 */
 func CreateAccount(path string, accountName string) (response utils.Response) {
-
-	
 
 	registry, err := cosmosAccount.New(cosmosAccount.WithHome(path))
 

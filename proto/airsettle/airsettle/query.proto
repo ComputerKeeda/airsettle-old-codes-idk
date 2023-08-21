@@ -10,7 +10,7 @@ import "airsettle/airsettle/exelayer.proto";
 import "airsettle/airsettle/batch.proto";
 import "airsettle/airsettle/poll.proto";
 
-option go_package = "github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types";
+option go_package = "github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types";
 
 // Query defines the gRPC querier service.
 service Query {

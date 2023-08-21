@@ -5,7 +5,7 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/Airchains-Studio/Settlement_Layer/x/airsettle/types"
+	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
 
 	"github.com/cosmos/btcutil/bech32"
 	"github.com/cosmos/cosmos-sdk/store/prefix"
@@ -117,8 +117,6 @@ func (k msgServer) AddValidator(goCtx context.Context, msg *types.MsgAddValidato
 		StartDate:       ctx.BlockTime().String(),
 		PollCreator:     msg.Creator,
 	}
-
-
 
 	b := k.cdc.MustMarshal(&poll)
 	pollStore.Set([]byte(newUUID), b)

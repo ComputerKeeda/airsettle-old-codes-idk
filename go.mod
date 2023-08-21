@@ -1,4 +1,4 @@
-module github.com/Airchains-Studio/Settlement_Layer
+module github.com/airchains-network/Airchains-settlement-layer
 
 go 1.19
 

@@ -76,6 +76,8 @@ paths:
                       type: string
                     chainInfo:
                       type: string
+                    id:
+                      type: string
                     creator:
                       type: string
               pagination:
@@ -311,6 +313,8 @@ paths:
                       type: string
                     chainInfo:
                       type: string
+                    id:
+                      type: string
                     creator:
                       type: string
               pagination:
@@ -536,6 +540,8 @@ paths:
                   verificationKey:
                     type: string
                   chainInfo:
+                    type: string
+                  id:
                     type: string
                   creator:
                     type: string
@@ -47177,6 +47183,8 @@ definitions:
         type: string
       chainInfo:
         type: string
+      id:
+        type: string
       creator:
         type: string
   airsettle.airsettle.MsgAddBatchResponse:
@@ -47260,6 +47268,8 @@ definitions:
               type: string
             chainInfo:
               type: string
+            id:
+              type: string
             creator:
               type: string
       pagination:
@@ -47327,6 +47337,8 @@ definitions:
             verificationKey:
               type: string
             chainInfo:
+              type: string
+            id:
               type: string
             creator:
               type: string
@@ -47401,6 +47413,8 @@ definitions:
           verificationKey:
             type: string
           chainInfo:
+            type: string
+          id:
             type: string
           creator:
             type: string
