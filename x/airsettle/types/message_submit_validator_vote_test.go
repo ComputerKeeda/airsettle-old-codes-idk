@@ -3,7 +3,7 @@ package types
 import (
 	"testing"
 
-	"github.com/airchains-network/Airchains-settlement-layer/testutil/sample"
+	"github.com/ComputerKeeda/airsettle/testutil/sample"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 )

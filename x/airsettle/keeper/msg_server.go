@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
+	"github.com/ComputerKeeda/airsettle/x/airsettle/types"
 )
 
 type msgServer struct {

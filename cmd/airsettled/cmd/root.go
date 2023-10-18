@@ -39,8 +39,8 @@ import (
 
 	// this line is used by starport scaffolding # root/moduleImport
 
-	"github.com/airchains-network/Airchains-settlement-layer/app"
-	appparams "github.com/airchains-network/Airchains-settlement-layer/app/params"
+	"github.com/ComputerKeeda/airsettle/app"
+	appparams "github.com/ComputerKeeda/airsettle/app/params"
 )
 
 // NewRootCmd creates a new root command for a Cosmos SDK application

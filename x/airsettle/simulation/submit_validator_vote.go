@@ -3,8 +3,8 @@ package simulation
 import (
 	"math/rand"
 
-	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/keeper"
-	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
+	"github.com/ComputerKeeda/airsettle/x/airsettle/keeper"
+	"github.com/ComputerKeeda/airsettle/x/airsettle/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"

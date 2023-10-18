@@ -5,7 +5,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/spf13/cobra"
 
-	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
+	"github.com/ComputerKeeda/airsettle/x/airsettle/types"
 )
 
 func CmdQueryParams() *cobra.Command {

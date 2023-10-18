@@ -1,4 +1,4 @@
-module github.com/airchains-network/Airchains-settlement-layer
+module github.com/ComputerKeeda/airsettle
 
 go 1.19
 

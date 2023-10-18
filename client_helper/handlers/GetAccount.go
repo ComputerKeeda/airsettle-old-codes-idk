@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	utils "github.com/airchains-network/Airchains-settlement-layer/client_helper/utils"
+	utils "github.com/ComputerKeeda/airsettle/client_helper/utils"
 	cosmosAccount "github.com/ignite/cli/ignite/pkg/cosmosaccount"
 )
 
@@ -24,7 +24,7 @@ Example:
 	package main
 
 	import (
-		handlers "github.com/airchains-network/Airchains-settlement-layer_Calls/handlers"
+		handlers "github.com/ComputerKeeda/airsettle_Calls/handlers"
 	)
 
 	func main() {

@@ -3,8 +3,8 @@ package keeper_test
 import (
 	"testing"
 
-	testkeeper "github.com/airchains-network/Airchains-settlement-layer/testutil/keeper"
-	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
+	testkeeper "github.com/ComputerKeeda/airsettle/testutil/keeper"
+	"github.com/ComputerKeeda/airsettle/x/airsettle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 )

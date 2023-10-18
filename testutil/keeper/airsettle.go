@@ -3,8 +3,8 @@ package keeper
 import (
 	"testing"
 
-	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/keeper"
-	"github.com/airchains-network/Airchains-settlement-layer/x/airsettle/types"
+	"github.com/ComputerKeeda/airsettle/x/airsettle/keeper"
+	"github.com/ComputerKeeda/airsettle/x/airsettle/types"
 	tmdb "github.com/cometbft/cometbft-db"
 	"github.com/cometbft/cometbft/libs/log"
 	tmproto "github.com/cometbft/cometbft/proto/tendermint/types"
